@@ -2,6 +2,12 @@ package com.max
 
 
    fun main(args: Array<String>) {
+       /*
+       val & var 筆記
+       val = value 數值 不可變型態
+       var = variable 變數 可變型態
+        */
+
 //    println("maxtsaiHello")
        // 方法一
 //        Human().hello()
