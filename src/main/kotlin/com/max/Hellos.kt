@@ -13,7 +13,7 @@ package com.max
 
 class Human {
      fun hello(){
-      println("Hello from Kotlin")
+      println("Hello from Kotlin555")
      }
 }
 
