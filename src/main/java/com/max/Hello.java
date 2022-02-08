@@ -17,7 +17,13 @@ public class Hello {
 
         Person p = new Person();
         p.hello();
+        p.name = "MaxTsai";
+        p.weight = 66.5f;
+        p.height = 1.7f;
+        System.out.println(" BMI : " + p.bmi());
 
+        /*
+        區域型變數
         int age = 19;
         Integer age2 = 19;
         Character c2 = 'B';
@@ -30,6 +36,7 @@ public class Hello {
         boolean adult = true;
         boolean enroll = false;
         String name = "Max";
+        */
 
     }
 }

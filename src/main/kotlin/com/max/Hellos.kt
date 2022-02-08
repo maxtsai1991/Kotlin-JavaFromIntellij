@@ -12,8 +12,10 @@ package com.max
        // 方法一
 //        Human().hello()
        // 方法二
-       val h = Human()
+       val h = Human(66.5f,1.7f)
        h.hello()
+       h.bmi()
+       println(" BMI : " + h.bmi())
 
        var age = 19;
        age = 20;
@@ -22,9 +24,15 @@ package com.max
        name = "MaxTsai";
    }
 
-class Human {
+class Human (var weight : Float , var height : Float){
+
      fun hello(){
       println("Hello from Kotlin555")
      }
+
+    fun bmi() : Float {
+        val bmi = weight / (height * height)
+        return bmi
+    }
 }
 
