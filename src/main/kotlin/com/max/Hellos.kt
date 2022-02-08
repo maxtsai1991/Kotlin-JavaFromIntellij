@@ -13,7 +13,7 @@ package com.max
        age = 20;
        var weight = 66.5f;
        var name : String;
-       name = "Max";
+       name = "MaxTsai";
    }
 
 class Human {
