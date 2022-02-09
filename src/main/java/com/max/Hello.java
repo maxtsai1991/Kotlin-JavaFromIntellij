@@ -2,26 +2,35 @@ package com.max;
 
 import static sun.misc.Version.print;
 
+
+//    debug 模式筆記 :
+//    F7 (Step Into) 快捷鍵 : 追蹤進入當前程式碼方法裏頭
+//    F8 (Step Over) 快捷鍵 : 執行當前程式碼
+//    F9 (Resume Program) 快捷鍵 : 直接跑到下個中斷點
 public class Hello {
-    /*
-    debug 模式筆記 :
-    F7 (Step Into) 快捷鍵 : 追蹤進入當前程式碼方法裏頭
-    F8 (Step Over) 快捷鍵 : 執行當前程式碼
-    F9 (Resume Program) 快捷鍵 : 直接跑到下個中斷點
-     */
     public static void main(String[] args) {
 
-//        System.out.println("Hello World!!456789");
-
+        System.out.println("Maxtsai");
 //        new Person().hello();
 
-        Person p = new Person();
+        Person p = new Person("This is MaxTsai.",70.5f,1.7f);
+        System.out.println( " BMI1 : " + p.bmi());
+        p.printname();
+
         p.hello();
+
         p.name = "MaxTsai";
         p.weight = 66.5f;
         p.height = 1.7f;
-        System.out.println(" BMI : " + p.bmi());
 
+        System.out.println(" BMI2 : " + p.bmi());
+
+        int score = 88;
+        System.out.println( score > 70 && score < 80 );
+        System.out.println( score < 80 || score > 90 );
+
+        char c = 'A';
+        System.out.println(c > 60);
         /*
         區域型變數
         int age = 19;
