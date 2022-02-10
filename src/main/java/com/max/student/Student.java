@@ -30,6 +30,27 @@ public class Student {
         }else {
             System.out.println("\t平均分數不及格(Failed)");
         }
+        int average = getAverage();
+        char grading = 'F';
+        switch (average/10){
+            case 10:
+            case 9:
+                grading = 'A';
+                break;
+            case 8:
+                grading = 'B';
+                break;
+            case 7:
+                grading = 'C';
+                break;
+            case 6:
+                grading = 'D';
+                break;
+            case 5:
+                grading = 'F';
+                break;
+        }
+        System.out.println("\t" + grading);
     }
 
     public int getAverage(){ // 算平均
