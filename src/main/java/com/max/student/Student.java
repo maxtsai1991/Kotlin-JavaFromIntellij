@@ -23,8 +23,17 @@ public class Student {
     }
 
     public void print(){
-        System.out.println( "姓名:" + name + "\t英文:" + english + "\t數學:" + math + "\t" + " 平均分數 "+
-                ( english + math ) / 2 );
+        System.out.println( "\t姓名:" + name + "\t英文:" + english + "\t數學:" + math + "\t" + " 平均分數 "+
+                getAverage());
+        if(getAverage() >= 60){
+            System.out.print("\t平均分數及格(Pass)");
+        }else {
+            System.out.println("\t平均分數不及格(Failed)");
+        }
+    }
+
+    public int getAverage(){ // 算平均
+       return  ( english + math ) / 2;
     }
 
     //比對最高成績

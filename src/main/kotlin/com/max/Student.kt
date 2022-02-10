@@ -7,7 +7,7 @@ import java.util.*
 //        userInput()
         val stu = Student("Nico",88,99)
         stu.print()
-        println("High Score:{$stu.highest()}") //字串裡面要塞變數用"$"符號隔開即可,方法呼叫需加{}大括號
+        println("High Score:${stu.highest()}") //字串裡面要塞變數 ,用"$"符號隔開即可,方法呼叫需加{}大括號
         val testnum = 123
         println("This is num:$testnum")
     }
@@ -15,7 +15,12 @@ import java.util.*
 // var name : String? ->允許null值得宣告方法
 class Student (var name : String? , var english : Int , var math : Int) {
     fun print(){
-        println("姓名:" + name + "\t英文:" + english + "\t數學:" + math + "\t" + "平均分數: " +( english + math ) / 2 )
+        println("姓名:" + name + "\t英文:" + english + "\t數學:" + math + "\t" + "平均分數: " + getAverage() +"\t"+
+        if(getAverage() >= 60) "及格(PASS)" else "不及格(FAILED)" )
+    }
+
+    fun getAverage() : Int{
+        return ( english + math ) / 2
     }
 
     fun highest() : Int {
@@ -25,7 +30,7 @@ class Student (var name : String? , var english : Int , var math : Int) {
             print("English 為最高科目: ")
             english
         } else {
-            print("Math 為最高科目: ")
+            print("Math為最高科目: ")
             math
         };
 
