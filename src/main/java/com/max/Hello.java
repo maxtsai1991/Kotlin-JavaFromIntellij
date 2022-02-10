@@ -9,8 +9,14 @@ import static sun.misc.Version.print;
 //    F9 (Resume Program) 快捷鍵 : 直接跑到下個中斷點
 public class Hello {
     public static void main(String[] args) {
+        String s = "abcde";
+        System.out.println(s.charAt(3));
+        System.out.println(s.substring(3));
+        System.out.println(s.substring(1,4));
 
-        System.out.println("Maxtsai");
+        System.out.println(s.length());
+
+
 //        new Person().hello();
 
         Person p = new Person("This is MaxTsai.",70.5f,1.7f);

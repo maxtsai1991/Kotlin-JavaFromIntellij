@@ -6,7 +6,15 @@ package com.max
        val & var 筆記
        val = value 數值 不可變型態
        var = variable 變數 可變型態
+       ? 筆記 : 帶有有可能來源給值時有可能為null ,如用? 會直接做掉nullpoint例外處理
+       !! 筆記 : 如要自己處理 空值例外 用兩個驚嘆號
         */
+
+       var s : String ? = "abcde"
+//       s = null
+       println(s?.length)
+       println(s?.get(3))
+       println(s?.substring(3))
 
 //    println("maxtsaiHello")
 

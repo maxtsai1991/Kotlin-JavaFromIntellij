@@ -1,22 +1,22 @@
 package com.max.student;
 
-public class Students {
+public class Student {
     String id;
     String name;
     int english;
     int math;
 
-    public Students() {
+    public Student() {
     }
 
-    public Students(String id, String name, int english, int math) {
+    public Student(String id, String name, int english, int math) {
         this.id = id;
         this.name = name;
         this.english = english;
         this.math = math;
     }
 
-    public Students(String name, int english, int math) {
+    public Student(String name, int english, int math) {
         this.name = name;
         this.english = english;
         this.math = math;

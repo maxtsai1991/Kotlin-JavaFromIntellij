@@ -11,7 +11,7 @@ public class SchoolRunner {
         int english = scanner.nextInt();
         System.out.println("Please enter student's Math: ");
         int math = scanner.nextInt();
-        Students stu = new Students(name,english,math);
+        Student stu = new Student(name,english,math);
         stu.print();
 
     }
