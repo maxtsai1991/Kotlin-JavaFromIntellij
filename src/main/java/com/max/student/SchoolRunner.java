@@ -1,9 +1,18 @@
 package com.max.student;
 
+import java.util.Scanner;
+
 public class SchoolRunner {
     public static void main(String[] args) {
-    Student stu = new Student("Max",60,77);
-    stu.print();
+        System.out.println("Please enter student's name: ");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.next();
+        System.out.println("Please enter student's English: ");
+        int english = scanner.nextInt();
+        System.out.println("Please enter student's Math: ");
+        int math = scanner.nextInt();
+        Students stu = new Students(name,english,math);
+        stu.print();
 
     }
 }
