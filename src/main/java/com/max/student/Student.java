@@ -23,7 +23,20 @@ public class Student {
     }
 
     public void print(){
-        System.out.println( name + "\t" + english + "\t" + math + "\t" + " 平均分數 "+
+        System.out.println( "姓名:" + name + "\t英文:" + english + "\t數學:" + math + "\t" + " 平均分數 "+
                 ( english + math ) / 2 );
+    }
+
+    //比對最高成績
+    public int highest(){
+        //方法一 (三元運算):
+        int max = (english > math) ? english : math ;
+        //方法二 (if...else):
+        if(english > math){
+            max = english;
+        }else {
+            max = math;
+        }
+        return max;
     }
 }
