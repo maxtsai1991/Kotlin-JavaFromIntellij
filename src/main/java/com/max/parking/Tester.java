@@ -2,17 +2,40 @@ package com.max.parking;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Tester {
     public static void main(String[] args) {
-        /*
-        Date內部使用
-        long 長整數
-        1970/1/1 00:00:00 至今的毫秒數
-        1000毫秒 = 1秒鐘
-         */
+
+        java8();
+        java();
+    }
+
+    private static void java8() {
+        Instant instant = Instant.now();
+        System.out.println(instant); // 2022-02-15T03:30:27.417Z  T = Time時間　Ｚ= zone時區 ,格林威治的標準時間
+        // Local
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println("now : " + now);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        System.out.println(formatter.format(now));
+        System.out.println("now時間加三小時: "+now.plus(Duration.ofHours(3)));
+        LocalDateTime other = LocalDateTime.of(2018,11,23,12,0,0);
+        System.out.println("自訂年月日時分秒:" + other);
+    }
+
+    private static void java() {
+    /*
+    Date內部使用
+    long 長整數
+    1970/1/1 00:00:00 至今的毫秒數
+    1000毫秒 = 1秒鐘
+     */
         Date date = new Date();
         System.out.println("印出當下時間 : " + date);
         System.out.println("印出long長整數值 : " + date.getTime());
