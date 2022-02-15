@@ -17,7 +17,7 @@ import java.util.*
     }
 
 // var name : String? ->允許null值得宣告方法
-class Student (var name : String? , var english : Int , var math : Int) {
+    class Student (var name : String? , var english : Int , var math : Int) {
 
     fun print(){
         // 寫法一:
