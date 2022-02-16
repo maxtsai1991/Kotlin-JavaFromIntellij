@@ -5,15 +5,30 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Tester {
     public static void main(String[] args) {
+        LocalDateTime enter = LocalDateTime.of(2022,02,16,8,0,0);
+        LocalDateTime leave = LocalDateTime.of(2022,02,16,10,8,0);
 
-        java8();
-        java();
+
+        Car car = new Car("AA-00001",enter);
+        car.setLeave(leave);
+        System.out.println("計算停留在停車場多久時間: " + car.getDuration() + "分鐘");
+        long hours = (long) Math.ceil(car.getDuration() / 60.0); // Math.ceil() 無條件進位 回傳double 強制轉型成long ,這樣做才不會虧錢
+        System.out.println("停幾小時 : " + hours);
+        System.out.println("停車費用(1小時$30) : " + 30 * hours + "$");
+
+//        Car car = new Car("AA-00001",enter.atZone(ZoneId.systemDefault()).toEpochSecond()); // "AA-00001" -> id車號 , 進場時間
+//        car.setLeave(System.currentTimeMillis() + 1000*60*60*2); // 設置離場時間為進場時間+2小時
+
+        // 設定時間寫法 有分java8 及 java8之前的寫法
+//        java8();
+//        java();
     }
 
     private static void java8() {
