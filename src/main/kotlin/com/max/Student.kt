@@ -5,10 +5,18 @@ import java.util.*
 
     fun main(args: Array<String>) {
 //        userInput()
-        val stu = Student("Nico",20,99)
-        stu.print()
+        Student.pass = 50 // 及格分數 60 改成 50
 
-        println("------------------------------------------------")
+        // New 出Student 3個物件
+        val stu = Student("Max",60,99)
+        val stu1 = Student("Jane",44,68)
+        val stu2 = Student("Eric",30,40)
+
+        stu.print()
+        stu1.print()
+        stu2.print()
+
+        println("---------------------最高分數---------------------------")
 
         println("\nHigh Score:${stu.highest()}") //字串裡面要塞變數 ,用"$"符號隔開即可,方法呼叫需加{}大括號
 
@@ -19,18 +27,28 @@ import java.util.*
 // var name : String? ->允許null值得宣告方法
     class Student (var name : String? , var english : Int , var math : Int) {
 
+    // companion object{} : Kotlin的static靜態, Kotlin裡如需用靜態方法,欄位,就需寫在companion object裡面
+    companion object{
+        @JvmStatic //@JvmStatic : 寫這個可以在Java的類別裡面,直接使用pass靜態欄位
+        var pass = 60 // Kotlin 的static靜態欄位
+        fun test(){
+            println("testing")
+        }
+    }
+
     fun print(){
         // 寫法一:
-        println("姓名: " + name + "\t英文: " + english + "\t數學: " + math + "\t平均分數: " + getAverage() +"\t"+
+        println("寫法一:"+" 姓名: " + name + "\t英文: " + english + "\t數學: " + math + "\t平均分數: " + getAverage() +"\t"+
         "\n平均成績是否及格(大於等於60分) : " + passOrFailed() + "\n平均分數等級:" + grading())
 
         println("-------------------------------------------------------------------------------------")
 
         // 寫法二(用"$"符號去串接變數或是方法):
-        println(" 姓名:$name \n 英文:$english \n 數學:$math \n 平均分數:${getAverage()} \n 平均成績是否及格(大於等於60分) : ${passOrFailed()} \n 平均分數等級: ${grading()}")
+        println("寫法二:"+" 姓名:$name \n 英文:$english \n 數學:$math \n 平均分數:${getAverage()} \n 平均成績是否及格(大於等於60分) : ${passOrFailed()} \n 平均分數等級: ${grading()}")
+        println("-------------------------------------------------------------------------------------")
     }
-
-    fun passOrFailed() = if(getAverage() >= 60) "及格(PASS)" else "不及格(FAILED)"
+    // pass : 及格分數,static靜態欄位
+    fun passOrFailed() = if(getAverage() >= pass) "及格(PASS)" else "不及格(FAILED)"
 
     fun grading() : Char{
 

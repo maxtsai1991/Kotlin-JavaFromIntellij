@@ -2,11 +2,15 @@ package com.max;
 
 import static sun.misc.Version.print;
 
+/*
+   Ddebug 模式筆記 :
+    F7 (Step Into) 快捷鍵 : 追蹤進入當前程式碼方法裏頭
+    F8 (Step Over) 快捷鍵 : 往下執行(執行當前程式碼)
+    Shift + F8 (Step Out) 快捷鍵 : 結束當前方法
+    F9 (Resume Program) 快捷鍵 : 直接跑到下個中斷點
+ */
 
-//    debug 模式筆記 :
-//    F7 (Step Into) 快捷鍵 : 追蹤進入當前程式碼方法裏頭
-//    F8 (Step Over) 快捷鍵 : 執行當前程式碼
-//    F9 (Resume Program) 快捷鍵 : 直接跑到下個中斷點
+
 public class Hello {
     public static void main(String[] args) {
         String s = "abcde";
