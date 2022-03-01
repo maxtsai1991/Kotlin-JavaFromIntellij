@@ -10,7 +10,6 @@ public class SchoolRunner {
     public static void main(String[] args) {
 //        userInput();
 
-
         com.max.Student.getPass();   // 在Java使用Kotlin的Student類別,是取得Kotlin的Pass靜態欄位
         com.max.Student.setPass(40); // 在Java使用Kotlin的Student類別,是設定Kotlin的Pass靜態欄位
 
@@ -25,6 +24,11 @@ public class SchoolRunner {
 
         Student stu3 = new Student("Jane",30,55);
         stu3.print();
+
+        GraduateStudent gstu = new GraduateStudent("Jack",55,65,60);
+        System.out.println("練習GraduateStudent物件,繼承父類別Student印出:" );
+        gstu.print();
+
     }
 
     private static void userInput() {

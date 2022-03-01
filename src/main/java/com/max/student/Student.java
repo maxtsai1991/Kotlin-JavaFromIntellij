@@ -17,8 +17,6 @@ public class Student {
     int math;
     static int pass = 60; // 及格標準
 
-    public Student() {
-    }
 
     public Student(String id, String name, int english, int math) {
         this.id = id;
@@ -72,12 +70,12 @@ public class Student {
     public int highest(){
         //方法一 (三元運算):
         int max = (english > math) ? english : math ;
-        //方法二 (if...else):
-        if(english > math){
-            max = english;
-        }else {
-            max = math;
-        }
+//        //方法二 (if...else):
+//        if(english > math){
+//            max = english;
+//        }else {
+//            max = math;
+//        }
         return max;
     }
 }

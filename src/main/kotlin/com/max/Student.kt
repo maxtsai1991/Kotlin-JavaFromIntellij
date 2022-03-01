@@ -7,25 +7,42 @@ import java.util.*
 //        userInput()
         Student.pass = 50 // 及格分數 60 改成 50
 
-        // New 出Student 3個物件
+        // New 出Student 3個物件,並印出
         val stu = Student("Max",60,99)
         val stu1 = Student("Jane",44,68)
         val stu2 = Student("Eric",30,40)
-
         stu.print()
         stu1.print()
         stu2.print()
 
-        println("---------------------最高分數---------------------------")
+        //New 出Student的子類別GraduateStudent,並印出
+        val gstu = GraduateStudent("Jack", 55, 65, 60)
+        gstu.print()
 
-        println("\nHigh Score:${stu.highest()}") //字串裡面要塞變數 ,用"$"符號隔開即可,方法呼叫需加{}大括號
+        println("\n最高分數(High Score):${stu.highest()}") //字串裡面要塞變數 ,用"$"符號隔開即可,方法呼叫需加{}大括號
 
         val testnum = 123
         println("This is num:$testnum")
+
+    }
+// GraduateSttudent 子類別繼承Student父類別
+class GraduateStudent(name: String?, english: Int, math: Int, var thesis: Int) : Student(name, english, math){
+    companion object{
+        var pass = 70 // 變更子類別的及格分數pass , 60分改成70分
     }
 
-// var name : String? ->允許null值得宣告方法
-    class Student (var name : String? , var english : Int , var math : Int) {
+    // override fun print() {} : 覆寫父類別方法,需在父類別方法前加上open ,覆寫父類別方法快捷鍵 ctrl + o
+    override fun print() {
+        println("姓名:$name\t 英文:$english\t 數學:$math\t 論文:$thesis\t 平均分數:${getAverage()}\t 平均成績是否及格:${passOrFailed()}\t 平均分數等級:${grading()}")
+    }
+
+    override fun passOrFailed() = if(getAverage() >= pass) "及格(PASS)" else "不及格(FAILED)"
+
+}
+
+    // var name : String? ->允許null值得宣告方法
+    // open 代表開放給人家繼承的, Student父類別,被GraduateSttudent子類別繼承
+    open class Student (var name : String? , var english : Int , var math : Int) {
 
     // companion object{} : Kotlin的static靜態, Kotlin裡如需用靜態方法,欄位,就需寫在companion object裡面
     companion object{
@@ -36,7 +53,7 @@ import java.util.*
         }
     }
 
-    fun print(){
+    open fun print(){
         // 寫法一:
         println("寫法一:"+" 姓名: " + name + "\t英文: " + english + "\t數學: " + math + "\t平均分數: " + getAverage() +"\t"+
         "\n平均成績是否及格(大於等於60分) : " + passOrFailed() + "\n平均分數等級:" + grading())
@@ -48,7 +65,8 @@ import java.util.*
         println("-------------------------------------------------------------------------------------")
     }
     // pass : 及格分數,static靜態欄位
-    fun passOrFailed() = if(getAverage() >= pass) "及格(PASS)" else "不及格(FAILED)"
+    // 加open : 讓別人可以覆寫, ctrl + O 覆寫快捷鍵才看的到
+    open fun passOrFailed() = if(getAverage() >= pass) "及格(PASS)" else "不及格(FAILED)"
 
     fun grading() : Char{
 
