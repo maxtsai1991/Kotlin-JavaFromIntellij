@@ -10,8 +10,8 @@ public class SchoolRunner {
     public static void main(String[] args) {
 //        userInput();
 
-        com.max.Student.getPass();   // 在Java使用Kotlin的Student類別,是取得Kotlin的Pass靜態欄位
-        com.max.Student.setPass(40); // 在Java使用Kotlin的Student類別,是設定Kotlin的Pass靜態欄位
+        com.kotlin.Student.getPass();   // 在Java使用Kotlin的Student類別,是取得Kotlin的Pass靜態欄位
+        com.kotlin.Student.setPass(40); // 在Java使用Kotlin的Student類別,是設定Kotlin的Pass靜態欄位
 
         Student.pass = 50; // 靜態欄位的用法,Student物件下有個pass靜態欄位,降低及格標準( 原60分 改為 50分 )
 

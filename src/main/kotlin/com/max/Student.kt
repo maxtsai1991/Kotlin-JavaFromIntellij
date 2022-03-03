@@ -1,8 +1,17 @@
-package com.max
+package com.kotlin
 
 import java.util.*
 
-
+/*
+Kotlin 預設存取修飾字為public ,沒有寫存取修飾字也是public
+private : 只能在目前類別當中使用
+proteted : 目前類別及子類別都可以使用
+internal : 模組(module)可用
+Kotlin 模組(module) :
+1.IntelliJ的模組
+2.Maven專案 : 建置專案的工具
+3.Gradle的srcSet
+ */
     fun main(args: Array<String>) {
 //        userInput()
         Student.pass = 50 // 及格分數 60 改成 50
@@ -68,7 +77,7 @@ class GraduateStudent(name: String?, english: Int, math: Int, var thesis: Int) :
     // 加open : 讓別人可以覆寫, ctrl + O 覆寫快捷鍵才看的到
     open fun passOrFailed() = if(getAverage() >= pass) "及格(PASS)" else "不及格(FAILED)"
 
-    fun grading() : Char{
+    internal fun grading() : Char{
 
         // 寫法一:
         return when(getAverage()) { // Kotlin 的when 等於 Java Which case

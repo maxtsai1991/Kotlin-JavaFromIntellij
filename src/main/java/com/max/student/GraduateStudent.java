@@ -12,6 +12,7 @@ public class GraduateStudent extends Student{ // GraduateStudent : 研究生
     public GraduateStudent(String name, int english, int math, int thesis){
         super(name, english, math); // 直接沿用父類別的欄位
         this.thesis = thesis; // 新增子類別新的欄位 thesis 論文欄位
+
     }
 
     @Override

@@ -1,7 +1,9 @@
 package com.max
 
+import com.kotlin.Student
 
-   fun main(args: Array<String>) {
+
+fun main(args: Array<String>) {
        /*
        val & var 筆記
        val = value 數值 不可變型態

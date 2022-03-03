@@ -10,6 +10,12 @@ public class Student {
          2.靜態欄位 : 不需new出可以直接用,
          Ex1. Student.pass
          Ex2. Student.pass = 50; 即可改變靜態欄位的初始值
+
+    存取修飾字(Access Modifier) :
+        public    : 不論在哪裡,都可以使用,可見範圍是最大
+        private   : 只有在同樣類別下才能使用,可見範圍是最小
+        protected : private + 子類別 (同樣類別+子類別都能使用)
+        預設(沒寫)  : private + package 可見,同類別+同package下的子類別都可以使用
      */
     String id;
     String name;

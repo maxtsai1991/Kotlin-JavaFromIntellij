@@ -1,6 +1,8 @@
 package com.max;
 
-import static sun.misc.Version.print;
+
+
+
 
 /*
    Ddebug 模式筆記 :
@@ -13,11 +15,11 @@ import static sun.misc.Version.print;
 
 public class Hello {
     public static void main(String[] args) {
+        Student stu = new Student("Hanck",50,60);
         String s = "abcde";
         System.out.println(s.charAt(3));
         System.out.println(s.substring(3));
         System.out.println(s.substring(1,4));
-
         System.out.println(s.length());
 
 
