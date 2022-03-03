@@ -1,5 +1,6 @@
 package com.max;
 
+import com.max.student.Student;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

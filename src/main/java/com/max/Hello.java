@@ -13,6 +13,8 @@ package com.max;
  */
 
 
+import com.max.student.Student;
+
 public class Hello {
     public static void main(String[] args) {
         Student stu = new Student("Hanck",50,60);
