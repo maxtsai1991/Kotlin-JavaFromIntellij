@@ -2,13 +2,12 @@ package com.max.io;
 
 import java.io.*;
 
-public class Tester {
+public class ReadTester {
     /*
     輸出入相關類別與緩衝區(Buffered)讀取 :
                     輸入                      輸出
         byte    InputStream             OutputStream
         char    Reader                  Writer
-
      */
 
     public static void main(String[] args) {
